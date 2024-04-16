@@ -1,13 +1,13 @@
-/* src/Public.js */
+/* src/MorePublic.js */
 import React from 'react';
 import Container from './Container';
 
-const Public = () => {
+const MorePublic = () => {
   return (
     <Container>
-      <h1>Public route</h1>
+      <h1>More Public route</h1>
     </Container>
   )
 }
 
-export default Public
+export default MorePublic

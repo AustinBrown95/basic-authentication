@@ -1,20 +1,21 @@
-
-import { React, useEffect } from 'react';
-import { Auth } from 'aws-amplify'
-import Container from './Container'
+import React, { useEffect } from 'react';
+import { getCurrentUser } from 'aws-amplify/auth';
+import Container from './Container';
+import { useNavigate } from 'react-router-dom';
 
 const Protected = (props) => {
-  useEffect(() => {
-    Auth.currentAuthenticatedUser()
-      .catch(() => {
-        props.history.push('/profile')
-      })
-  }, [])
-  return (
-    <Container>
-      <h1>Protected route</h1>
-    </Container>
-  );
+    const navigate = useNavigate();
+    useEffect( () => {
+        getCurrentUser()
+            .catch(() => {
+                navigate('/profile')
+            })
+        }, [])
+    return (
+        <Container>
+                <h1>Protected Route</h1>
+        </Container>
+    );
 }
 
 export default Protected
