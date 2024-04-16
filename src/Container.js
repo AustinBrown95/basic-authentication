@@ -1,7 +1,7 @@
 import { React } from 'react';
 
 const Container = ({ children }) => (
-    <div style = {StyleSheet.container}>
+    <div style = {styles.container}>
         { children }
     </div>
 )
